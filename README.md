@@ -9,7 +9,7 @@ Message flow:
 + Spring Boot 3
 + REST
 ### **Документация API**
-1) **Endpoint "/api/symbols"**
+1) **Endpoint "/api/symbols?str={String}"**
 
 - **Request**
 
