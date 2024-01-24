@@ -1,6 +1,7 @@
 package com.alexeyrand.justsymbols.service;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -9,9 +10,11 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class SymbolsService {
-    public String solve(String str) {
+
+    public String solve(String strArg) {
+        String str = strArg.toLowerCase().trim();
         Map<Character, Integer> symsMap = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
             Integer count = symsMap.get(str.charAt(i));
@@ -21,6 +24,7 @@ public class SymbolsService {
                 symsMap.put(str.charAt(i), ++count);
             }
         }
+        System.out.println(symsMap);
 
         List<Map.Entry<Character, Integer>> ppp = symsMap.entrySet().stream()
                 .sorted(Map.Entry.<Character, Integer>comparingByValue()
