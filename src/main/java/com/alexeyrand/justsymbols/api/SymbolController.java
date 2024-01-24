@@ -26,7 +26,7 @@ public class SymbolController {
             throw new BadRequestException("Строка превышает максимальную длину. Введите строку длиной " + MAX_SYMBOLS +".");
         }
 
-        if (str.contains(" ")) {
+        if (str.trim().contains(" ")) {
             throw new BadRequestException("В строке не должно быть пробелов");
         }
         System.out.println(str);

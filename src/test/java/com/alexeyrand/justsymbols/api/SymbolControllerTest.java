@@ -59,7 +59,7 @@ public class SymbolControllerTest {
 
     @Test
     public void result_2() {
-        String res = service.solve("QQqqqwwrrrrrr");
+        String res = service.solve("QQqqqwwrrrrrr   ");
         assertEquals("{\"r\": 6, \"q\": 5, \"w\": 2}", res);
     }
 
